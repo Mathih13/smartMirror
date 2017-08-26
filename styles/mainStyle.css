@@ -1,0 +1,41 @@
+
+
+
+html {
+  background-color: #000;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+
+
+.welcome {
+  flex: 10em;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.welcomeTitle {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100 !important;
+  font-size: 250%;
+   -webkit-animation: fadein 4s;
+}
+
+.welcomeDescription {
+  text-align: center;
+  -webkit-animation: fadein 10s;
+}
+
+.funny {
+  display: none;
+  text-align: center;
+  -webkit-animation: fadein 10s;
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
