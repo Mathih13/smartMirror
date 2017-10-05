@@ -20,9 +20,18 @@ const url = require('url')
 let mainWindow
 let loadingWindow
 
+let fullScreen = true
+
+if (isDev) {
+  console.log('Initalizing dev-settings...')
+  fullScreen = false
+}
+
 function createWindow () {
 
-
+  if (isDev) {
+    console.log('Creating windows...')
+  }
   // Create the browser window.
   loadingWindow = new BrowserWindow({width: 800, height: 600, show: false, frame: false})
 
@@ -67,8 +76,8 @@ app.on('activate', function () {
 
 ipcMain.on('loaded', (event, arg) => {
   loadingWindow.close()
-  loadingWindow = null;
-  mainWindow = new BrowserWindow({width: 800, height: 600, show: false, fullscreen: true})
+
+  mainWindow = new BrowserWindow({width: 800, height: 600, show: false, fullscreen: fullScreen})
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
     protocol: 'file:',
