@@ -1,5 +1,5 @@
 var {ipcRenderer, remote} = require('electron')
-var main = remote.require("./main.js")
+var main = remote.require("./main.dev.js")
 
 import Funnies from './modules/funnies/funnies'
 let funnies = new Funnies()
