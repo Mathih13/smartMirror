@@ -25,7 +25,7 @@ export default class Widget extends Component {
 
   render() {
     return (
-      <div className="Test" style={{ display: this.state.display }}>
+      <div className="Wigdet" style={{ display: this.state.display }}>
           {this.props.children}
       </div>
     );
