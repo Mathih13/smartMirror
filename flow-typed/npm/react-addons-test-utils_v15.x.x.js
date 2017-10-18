@@ -1,4 +1,4 @@
-// flow-typed signature: edc151d4ee06b1d20021425952030a4b
+// flow-typed signature: e858415e63b6afea5a30ea78b2817cc2
 // flow-typed version: cdb403dbea/react-addons-test-utils_v15.x.x/flow_>=v0.15.x
 
 import React from 'react';
