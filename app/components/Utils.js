@@ -3,7 +3,7 @@ var Utils = function () {}
 
 Utils.prototype.getCurrentLocation = () => {
   return new Promise((resolve, reject) => {
-    fetch('https://ipinfo.io/85.167.74.187/json')
+    fetch('https://ipinfo.io/158.37.240.19/json')
       .then((res) => {
         return res.json()
       })
@@ -13,6 +13,20 @@ Utils.prototype.getCurrentLocation = () => {
         var lon = loc[1]
 
         resolve({lat: lat, lon: lon})
+      })
+  })
+  reject(new Error('Something went wrong!'))
+}
+
+Utils.prototype.getCurrentCity = () => {
+  return new Promise((resolve, reject) => {
+    fetch('https://ipinfo.io/158.37.240.19/json')
+      .then((res) => {
+        return res.json()
+      })
+      .then((json) => {
+
+        resolve({city: json.city})
       })
   })
   reject(new Error('Something went wrong!'))

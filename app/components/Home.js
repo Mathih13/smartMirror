@@ -15,7 +15,7 @@ export default class Home extends Component {
           <Widget>
             <WeatherWidget />
           </Widget>
-          <Widget hide> {/* Easily hide the widgets */}
+          <Widget> {/* Easily hide the widgets */}
             <AnotherFuckingWidget />
           </Widget>
         </div>
