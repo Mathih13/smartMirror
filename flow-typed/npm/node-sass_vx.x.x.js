@@ -1,4 +1,4 @@
-// flow-typed signature: 871feff5c9c69a8d3b196b0291cc5608
+// flow-typed signature: 65c2e8025df857884eb2cd76d14aa91f
 // flow-typed version: <<STUB>>/node-sass_v^4.5.3/flow_v0.48.0
 
 /**
@@ -39,6 +39,10 @@ declare module 'node-sass/lib/index' {
 }
 
 declare module 'node-sass/lib/render' {
+  declare module.exports: any;
+}
+
+declare module 'node-sass/lib/watcher' {
   declare module.exports: any;
 }
 
@@ -150,6 +154,10 @@ declare module 'node-sass/test/useragent' {
   declare module.exports: any;
 }
 
+declare module 'node-sass/test/watcher' {
+  declare module.exports: any;
+}
+
 // Filename aliases
 declare module 'node-sass/lib/binding.js' {
   declare module.exports: $Exports<'node-sass/lib/binding'>;
@@ -165,6 +173,9 @@ declare module 'node-sass/lib/index.js' {
 }
 declare module 'node-sass/lib/render.js' {
   declare module.exports: $Exports<'node-sass/lib/render'>;
+}
+declare module 'node-sass/lib/watcher.js' {
+  declare module.exports: $Exports<'node-sass/lib/watcher'>;
 }
 declare module 'node-sass/scripts/build.js' {
   declare module.exports: $Exports<'node-sass/scripts/build'>;
@@ -246,4 +257,7 @@ declare module 'node-sass/test/spec.js' {
 }
 declare module 'node-sass/test/useragent.js' {
   declare module.exports: $Exports<'node-sass/test/useragent'>;
+}
+declare module 'node-sass/test/watcher.js' {
+  declare module.exports: $Exports<'node-sass/test/watcher'>;
 }

@@ -1,5 +1,5 @@
-// flow-typed signature: c7c069bb7720973a6e85d86155e040b4
-// flow-typed version: 15fc37123b/express_v4.x.x/flow_>=v0.32.x
+// flow-typed signature: 8cf0512334211b26b03bbfb64710e89e
+// flow-typed version: ed397013d1/express_v4.x.x/flow_>=v0.32.x
 
 import type { Server } from 'http';
 import type { Socket } from 'net';
@@ -61,6 +61,8 @@ declare type express$CookieOptions = {
   signed?: boolean
 };
 
+declare type express$Path = string | RegExp;
+
 declare type express$RenderCallback = (err: Error | null, html?: string) => mixed;
 
 declare type express$SendFileOptions = {
@@ -107,7 +109,7 @@ declare type express$Middleware =
 declare interface express$RouteMethodType<T> {
   (middleware: express$Middleware): T;
   (...middleware: Array<express$Middleware>): T;
-  (path: string|RegExp|string[], ...middleware: Array<express$Middleware>): T;
+  (path: express$Path|express$Path[], ...middleware: Array<express$Middleware>): T;
 }
 declare class express$Route {
   all: express$RouteMethodType<this>;
@@ -147,7 +149,7 @@ declare class express$Router extends express$Route {
   static (options?: express$RouterOptions): express$Router;
   use(middleware: express$Middleware): this;
   use(...middleware: Array<express$Middleware>): this;
-  use(path: string|RegExp|string[], ...middleware: Array<express$Middleware>): this;
+  use(path: express$Path|express$Path[], ...middleware: Array<express$Middleware>): this;
   use(path: string, router: express$Router): this;
   handle(req: http$IncomingMessage, res: http$ServerResponse, next: express$NextFunction): void;
   param(

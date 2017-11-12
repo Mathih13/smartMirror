@@ -46,9 +46,11 @@ export default class WeatherWidget extends Component {
       return <p> Loading... </p>
     } else {
     return (
+      // Current weather icon needs seperate .png images that match the obj.values
       <div>
-        <p> <img src={"./components/widgets/img/" + this.state.weather.icon + ".png"} alt="Current Weather Icon" width="195" height="168"/>
-            {this.state.weather.icon} </p>
+        <p> <img src={"./components/widgets/img/" + this.state.weather.icon + ".png"}
+              alt="Current Weather Icon" width="150" height="150"/> </p>
+        <p> {this.state.weather.icon} </p>
         <p> Current Temp: {this.state.weather.temperature.value} Celcius </p>
         <p> Rain: {this.state.weather.rain}</p>
         <p> Wind: {this.state.weather.windSpeed.name}, {this.state.weather.windSpeed.mps}mps {this.state.weather.windDirection.name} </p>
