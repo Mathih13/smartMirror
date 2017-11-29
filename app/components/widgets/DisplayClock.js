@@ -11,43 +11,50 @@ export default class DisplayClock extends Component {
       hour: currentTime.getHours(),
       min: currentTime.getMinutes(),
       sec: currentTime.getSeconds(),
-      dayTime: null
+      // dayTime: null
     }
   }
 
   componentWillMount(){
-    let component = this
     let increment = () => {
-      if (component.state.sec >= 59) {
-        component.setState({min: component.state.min + 1})
-        component.setState({sec: 0})
-        if (component.state.min >= 59) {
-          component.setState({hour: component.state.hour + 1})
-          component.setState({min: 0})
-          if (component.state.hour >= 24 || 0) {
-            component.setState({hour: 0})
+      if (this.state.sec >= 59) {
+        this.setState({min: this.state.min + 1})
+        this.setState({sec: 0})
+        if (this.state.min >= 59) {
+          this.setState({hour: this.state.hour + 1})
+          this.setState({min: 0})
+          if (this.state.hour >= 24 || 0) {
+            this.setState({hour: 0})
           }
         }
       } else {
-        component.setState({sec: component.state.sec + 1})
+        this.setState({sec: this.state.sec + 1})
       }
     }
 
     let timer = setInterval(increment, 1000)
-
-    let timeOfDay = () => {
-      if(this.state.hour < 12) {
-        this.setState({dayTime: "AM"})
-      } else {
-        this.setState({dayTime: "PM"})
-      }
-    }
+    // this.getTimeOfDay()
   }
+
+  addZero(i) {
+    if (i < 10) {
+      i = "0" + i
+    }
+    return i;
+  }
+
+  // getTimeOfDay() {
+  //   if(this.state.hour < 12) {
+  //     this.setState({dayTime: "AM"})
+  //   } else {
+  //     this.setState({dayTime: "PM"})
+  //   }
+  // }
 
   render() {
     return (
       <div>
-        <p>{this.state.hour}:{this.state.min}:{this.state.sec} {this.state.dayTime}</p>
+        <h1 style={{textAlign: "center"}}>{this.addZero(this.state.hour)}:{this.addZero(this.state.min)} {this.state.dayTime}</h1>
       </div>
     );
   }

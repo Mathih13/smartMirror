@@ -17,7 +17,11 @@ export default class WeatherWidget extends Component {
     this.state = {
       loading: true,
       location: null,
-      weather: null
+      weather: null,
+      styles: {
+        margin: '0 0 0 1.2rem',
+
+      }
     }
   }
 
@@ -48,12 +52,16 @@ export default class WeatherWidget extends Component {
     return (
       // Current weather icon needs seperate .png images that match the obj.values
       <div>
-        <p> <img src={"./components/widgets/img/" + this.state.weather.icon + ".png"}
-              alt="Current Weather Icon" width="150" height="150"/> </p>
-        <p> {this.state.weather.icon} </p>
-        <p> Current Temp: {this.state.weather.temperature.value} Celcius </p>
-        <p> Rain: {this.state.weather.rain}</p>
-        <p> Wind: {this.state.weather.windSpeed.name}, {this.state.weather.windSpeed.mps}mps {this.state.weather.windDirection.name} </p>
+        <div style={{float: "left"}}>
+          <p style={{margin: 0}}> <img src={"./components/widgets/img/" + this.state.weather.icon + ".png"}
+                alt="Current Weather Icon" width="150" height="150"/> </p>
+        </div>
+        <div style={{...{float: "left"}, ...{height: "150px"}}}>
+          <p style={{...this.state.styles, ...{fontSize: "20px"}, ...{padding: "7% 0 10% 0"}}}><b>{this.state.weather.icon}</b></p>
+          <p style={this.state.styles}> {this.state.weather.temperature.value} Celcius </p>
+          <p style={this.state.styles}> Rain: {this.state.weather.rain}</p>
+          <p style={this.state.styles}> {this.state.weather.windSpeed.name}, {this.state.weather.windSpeed.mps}mps {this.state.weather.windDirection.name} </p>
+        </div>
       </div>
     )};
   }
