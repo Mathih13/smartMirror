@@ -1,5 +1,5 @@
-// flow-typed signature: c1ddcd5c82838e882e8b284da4650861
-// flow-typed version: 18a6cf4d2b/express_v4.x.x/flow_>=v0.32.x
+// flow-typed signature: 8cf0512334211b26b03bbfb64710e89e
+// flow-typed version: ed397013d1/express_v4.x.x/flow_>=v0.32.x
 
 import type { Server } from 'http';
 import type { Socket } from 'net';
@@ -61,6 +61,8 @@ declare type express$CookieOptions = {
   signed?: boolean
 };
 
+declare type express$Path = string | RegExp;
+
 declare type express$RenderCallback = (err: Error | null, html?: string) => mixed;
 
 declare type express$SendFileOptions = {
@@ -107,7 +109,7 @@ declare type express$Middleware =
 declare interface express$RouteMethodType<T> {
   (middleware: express$Middleware): T;
   (...middleware: Array<express$Middleware>): T;
-  (path: string|RegExp|string[], ...middleware: Array<express$Middleware>): T;
+  (path: express$Path|express$Path[], ...middleware: Array<express$Middleware>): T;
 }
 declare class express$Route {
   all: express$RouteMethodType<this>;
@@ -147,9 +149,18 @@ declare class express$Router extends express$Route {
   static (options?: express$RouterOptions): express$Router;
   use(middleware: express$Middleware): this;
   use(...middleware: Array<express$Middleware>): this;
-  use(path: string|RegExp|string[], ...middleware: Array<express$Middleware>): this;
+  use(path: express$Path|express$Path[], ...middleware: Array<express$Middleware>): this;
   use(path: string, router: express$Router): this;
   handle(req: http$IncomingMessage, res: http$ServerResponse, next: express$NextFunction): void;
+  param(
+    param: string,
+    callback: (
+      req: $Subtype<express$Request>,
+      res: express$Response,
+      next: express$NextFunction,
+      id: string
+    ) => mixed
+  ): void;
 
   // Can't use regular callable signature syntax due to https://github.com/facebook/flow/issues/3084
   $call: (req: http$IncomingMessage, res: http$ServerResponse, next?: ?express$NextFunction) => void;
