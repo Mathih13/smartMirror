@@ -8,6 +8,7 @@ import Api from '../utils/api'
 
 import WeatherWidget from './widgets/WeatherWidget'
 import AnotherFuckingWidget from './widgets/AnotherFuckingWidget'
+import DisplayClock from './widgets/DisplayClock'
 import RandomQuote from './widgets/RandomQuote'
 
 export default class Home extends Component {
@@ -48,6 +49,7 @@ export default class Home extends Component {
 
     return (
       <div>
+
 
 
         <div className="settingsButton">
