@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Utils from '../Utils'
+import FadeIn from 'react-fade-in';
 
 const yrno = require('yr.no-forecast')({
   version: '1.9', // this is the default if not provided,
@@ -64,5 +65,9 @@ export default class WeatherWidget extends Component {
         </div>
       </div>
     )};
+      <FadeIn>
+        <p> Current Temperature: {this.state.temperature} </p>
+      </FadeIn>
+    );
   }
 }
