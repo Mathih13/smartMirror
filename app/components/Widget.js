@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import FadeIn from 'react-fade-in';
 
 /*
   The template widget class. Wrap every widget in this so that
@@ -25,8 +25,8 @@ export default class Widget extends Component {
 
   render() {
     return (
-      <div className="Wigdet" style={{ display: this.state.display }}>
-          {this.props.children}
+      <div className="Wigdet" style={{ display: this.state.display, width: '60%' }}>
+          {this.props.component}
       </div>
     );
   }

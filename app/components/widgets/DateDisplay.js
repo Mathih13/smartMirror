@@ -2,9 +2,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Utils from '../Utils'
-import FadeIn from 'react-fade-in';
 
-export default class WeatherWidget extends Component {
+export default class DateDisplay extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -21,9 +20,7 @@ export default class WeatherWidget extends Component {
       return <p> Loading... </p>
     }
     return (
-      <FadeIn>
-        <p> Current Temperature: {this.state.temperature} </p>
-      </FadeIn>
+      <p> Current Temperature: {this.state.temperature} </p>
     );
   }
 }
