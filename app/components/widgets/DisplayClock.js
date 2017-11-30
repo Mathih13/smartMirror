@@ -11,6 +11,7 @@ export default class DisplayClock extends Component {
       hour: currentTime.getHours(),
       min: currentTime.getMinutes(),
       sec: currentTime.getSeconds(),
+      timer: null
       // dayTime: null
     }
   }
@@ -32,8 +33,12 @@ export default class DisplayClock extends Component {
       }
     }
 
-    let timer = setInterval(increment, 1000)
+     this.state.timer = setInterval(increment, 1000)
     // this.getTimeOfDay()
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.timer)
   }
 
   addZero(i) {
