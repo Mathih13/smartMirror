@@ -14,12 +14,6 @@ export default class Home extends Component {
         <div className={styles.container} data-tid="container">
           <h4>smort mirror</h4>
           <Widget>
-            <WeatherWidget />
-          </Widget>
-          <Widget hide> {/* Easily hide the widgets */}
-            <AnotherFuckingWidget />
-          </Widget>
-          <Widget>
             <BitCoinFeed />
           </Widget>
         </div>
