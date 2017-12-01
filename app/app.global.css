@@ -76,6 +76,21 @@ a:hover {
   animation-delay: -1.0s;
 }
 
+.bitCoinFeedStyling {
+  display: flex;
+  flex-direction: row;
+  height: 10%;
+  margin-right: auto;
+}
+
+.bitCoinImageStyling {
+  flex: 0;
+  width: 9%;
+  height: 9%;
+  align-self: flex-start;
+  margin-left: auto;
+}
+
 @-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
 @keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
 

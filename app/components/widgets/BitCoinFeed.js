@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Api from '../../utils/api'
+import styles from '../../app.global.css'
 
 export default class BitCoinFeed extends Component {
   constructor(props) {
@@ -25,7 +26,10 @@ export default class BitCoinFeed extends Component {
 
   render() {
     return (
-      <p>Bitcoin: {Math.round(this.state.currentCurrency)}</p>
-    )
+      <div className="bitCoinFeedStyling">
+        <img src='https://cdn.pixabay.com/photo/2017/07/27/21/37/bitcoin-2546854_960_720.png' className="bitCoinImageStyling"/>
+        <p>{Math.round(this.state.currentCurrency)} $</p>
+      </div>
+  )
   }
 }
