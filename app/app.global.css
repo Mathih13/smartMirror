@@ -61,8 +61,32 @@ body {
   opacity: 1;
 }
 
+.bitCoinFeedStyling {
+  display: flex;
+  flex-direction: row;
+  height: 10%;
+  margin-right: auto;
+}
+
+.bitCoinImageStyling {
+  flex: 0;
+  width: 9%;
+  height: 9%;
+  align-self: flex-start;
+  margin-left: auto;
+}
+
+@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
 .leftWidgets {
   flex: 1
+>>>>>>> master
 }
 
 .rightWidgets {
