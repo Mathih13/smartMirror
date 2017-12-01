@@ -52,22 +52,21 @@ export default class WeatherWidget extends Component {
     } else {
     return (
       // Current weather icon needs seperate .png images that match the obj.values
-      <div>
-        <div style={{float: "left"}}>
+      <div style={{display: 'flex', marginLeft: 'auto'}}>
+        <div>
           <p style={{margin: 0}}> <img src={"./components/widgets/img/" + this.state.weather.icon + ".png"}
-                alt="Current Weather Icon" width="150" height="150"/> </p>
+                alt="Current Weather Icon" width="120" height="120"/> </p>
         </div>
+        <FadeIn>
         <div style={{...{float: "left"}, ...{height: "150px"}}}>
           <p style={{...this.state.styles, ...{fontSize: "20px"}, ...{padding: "7% 0 10% 0"}}}><b>{this.state.weather.icon}</b></p>
           <p style={this.state.styles}> {this.state.weather.temperature.value} Celcius </p>
           <p style={this.state.styles}> Rain: {this.state.weather.rain}</p>
           <p style={this.state.styles}> {this.state.weather.windSpeed.name}, {this.state.weather.windSpeed.mps}mps {this.state.weather.windDirection.name} </p>
         </div>
+        </FadeIn>
       </div>
     )};
-      <FadeIn>
-        <p> Current Temperature: {this.state.temperature} </p>
-      </FadeIn>
-    );
+
   }
 }
