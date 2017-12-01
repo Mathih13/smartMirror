@@ -23,10 +23,12 @@ export default class AnotherFuckingWidget extends Component {
 
   render() {
     return (
-      <p> {this.state.currentCity} </p>
+      <div style={{marginLeft: 'auto'}}>
       <FadeIn>
-        <p> WOW I AM A WIDGET </p>
+          <p>Location Widget Example</p>
+          <p> {this.state.currentCity} </p>
       </FadeIn>
+      </div>
     );
   }
 }
