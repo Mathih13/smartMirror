@@ -11,6 +11,7 @@ import AnotherFuckingWidget from './widgets/AnotherFuckingWidget'
 import BitCoinFeed from './widgets/BitCoinFeed'
 import DisplayClock from './widgets/DisplayClock'
 import RandomQuote from './widgets/RandomQuote'
+import NewsFeed from './widgets/NewsFeed'
 
 
 const settings = require('electron-settings');
@@ -25,11 +26,13 @@ export default class Home extends Component {
         <WeatherWidget />,
         <RandomQuote />,
         <DisplayClock />,
+        <NewsFeed />,
       ],
       defaultWidgets: {
         leftWidgets: [
           <RandomQuote />,
           <DisplayClock />,
+          <NewsFeed />,
         ],
         rightWidgets: [
           <WeatherWidget />,
@@ -125,21 +128,10 @@ export default class Home extends Component {
 
     return (
       <div>
-<<<<<<< HEAD
-        <div className={styles.container} data-tid="container">
-          <h4>smort mirror</h4>
-          <Widget>
-            <BitCoinFeed />
-          </Widget>
-=======
-
-
-
         <div className="settingsButton">
           <a onClick={() => this.toggleSettingsPage()}>
             <img src="./components/media/settings.png" style={{width: '30%'}}/>
           </a>
->>>>>>> master
         </div>
 
         {this.state.settingsPage ?

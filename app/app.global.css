@@ -86,11 +86,17 @@ body {
 
 .leftWidgets {
   flex: 1
->>>>>>> master
 }
 
 .rightWidgets {
-  margin-left: auto;
-  flex: 1
+  text-align: right;
+  width: 50%;
+  flex: 1;
+}
 
+.newsFeed{
+  text-align: left;
+  margin-bottom: 25px;
+  font-size: auto;
+  list-style: none;
 }
