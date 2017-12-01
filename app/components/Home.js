@@ -25,6 +25,7 @@ export default class Home extends Component {
         <WeatherWidget />,
         <RandomQuote />,
         <DisplayClock />,
+        <BitCoinFeed />
       ],
       defaultWidgets: {
         leftWidgets: [
@@ -33,7 +34,7 @@ export default class Home extends Component {
         ],
         rightWidgets: [
           <WeatherWidget />,
-          <AnotherFuckingWidget />,
+          <BitCoinFeed />,
 
         ]
       },
@@ -125,21 +126,10 @@ export default class Home extends Component {
 
     return (
       <div>
-<<<<<<< HEAD
-        <div className={styles.container} data-tid="container">
-          <h4>smort mirror</h4>
-          <Widget>
-            <BitCoinFeed />
-          </Widget>
-=======
-
-
-
         <div className="settingsButton">
           <a onClick={() => this.toggleSettingsPage()}>
             <img src="./components/media/settings.png" style={{width: '30%'}}/>
           </a>
->>>>>>> master
         </div>
 
         {this.state.settingsPage ?

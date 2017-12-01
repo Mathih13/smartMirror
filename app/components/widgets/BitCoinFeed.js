@@ -21,8 +21,6 @@ export default class BitCoinFeed extends Component {
       })
     }
 
-  componentDidMount() {
-  }
 
   render() {
     return (
