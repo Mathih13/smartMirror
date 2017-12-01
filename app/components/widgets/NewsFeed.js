@@ -47,11 +47,9 @@ export default class NewsFeed extends Component {
   }
 
   render() {
-    console.log("feed", this.state.feed)
     var i = 0
     const headlines = this.state.feed.map((article) =>
-    <li style={{marginBottom: 7.5, borderBottom: "1px solid white", marginRight: 40}} key={"entry" +i++}> {article.desc} </li>);
-    console.log("headlines", headlines);
+    <li className="newsFeed" key={"entry" +i++}> {article.desc} </li>);
     if (this.state.loading) {
       return (
         <p> Loading...</p>
