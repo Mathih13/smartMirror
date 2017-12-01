@@ -97,8 +97,6 @@ body {
 .newsFeed{
   text-align: left;
   margin-bottom: 25px;
-  border-bottom-style: solid;
-  border-bottom-width: thin;
   font-size: auto;
   list-style: none;
 }
