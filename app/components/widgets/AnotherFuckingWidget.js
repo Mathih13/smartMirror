@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Utils from '../Utils'
+import FadeIn from 'react-fade-in';
 
 export default class AnotherFuckingWidget extends Component {
   constructor(props) {
@@ -23,6 +24,9 @@ export default class AnotherFuckingWidget extends Component {
   render() {
     return (
       <p> {this.state.currentCity} </p>
+      <FadeIn>
+        <p> WOW I AM A WIDGET </p>
+      </FadeIn>
     );
   }
 }

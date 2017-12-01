@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Utils from '../Utils'
+import FadeIn from 'react-fade-in';
 
 const yrno = require('yr.no-forecast')({
   version: '1.9', // this is the default if not provided,
@@ -17,7 +18,11 @@ export default class WeatherWidget extends Component {
     this.state = {
       loading: true,
       location: null,
-      weather: null
+      weather: null,
+      styles: {
+        margin: '0 0 0 1.2rem',
+
+      }
     }
   }
 
@@ -46,13 +51,22 @@ export default class WeatherWidget extends Component {
       return <p> Loading... </p>
     } else {
     return (
-      <div>
-        <p> <img src={"./components/widgets/img/" + this.state.weather.icon + ".png"} alt="Current Weather Icon" width="195" height="168"/>
-            {this.state.weather.icon} </p>
-        <p> Current Temp: {this.state.weather.temperature.value} Celcius </p>
-        <p> Rain: {this.state.weather.rain}</p>
-        <p> Wind: {this.state.weather.windSpeed.name}, {this.state.weather.windSpeed.mps}mps {this.state.weather.windDirection.name} </p>
+      // Current weather icon needs seperate .png images that match the obj.values
+      <div style={{display: 'flex', marginLeft: 'auto'}}>
+        <div>
+          <p style={{margin: 0}}> <img src={"./components/widgets/img/" + this.state.weather.icon + ".png"}
+                alt="Current Weather Icon" width="120" height="120"/> </p>
+        </div>
+        <FadeIn>
+        <div style={{...{float: "left"}, ...{height: "150px"}}}>
+          <p style={{...this.state.styles, ...{fontSize: "20px"}, ...{padding: "7% 0 10% 0"}}}><b>{this.state.weather.icon}</b></p>
+          <p style={this.state.styles}> {this.state.weather.temperature.value} Celcius </p>
+          <p style={this.state.styles}> Rain: {this.state.weather.rain}</p>
+          <p style={this.state.styles}> {this.state.weather.windSpeed.name}, {this.state.weather.windSpeed.mps}mps {this.state.weather.windDirection.name} </p>
+        </div>
+        </FadeIn>
       </div>
     )};
+
   }
 }

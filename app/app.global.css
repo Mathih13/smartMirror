@@ -1,95 +1,50 @@
-@import "~font-awesome/css/font-awesome.css";
+@import url('https://fonts.googleapis.com/css?family=Questrial');
 
 body {
   position: relative;
   color: white;
   height: 100vh;
   background-color: #000;
-  font-family: Arial, Helvetica, Helvetica Neue, serif;
+  font-family: 'Questrial', sans-serif;
   overflow-y: hidden;
 }
 
-h2 {
-  margin: 0;
-  font-size: 2.25rem;
-  font-weight: bold;
-  letter-spacing: -0.025em;
-  color: #fff;
+
+.settingsItem {
+  display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 60%;
+    padding: 0 20px;
+    border-bottom: 1px solid #efefef;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 400;
 }
 
-p {
-  font-size: 24px;
+.settingsButton {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    bottom: 0;
 }
 
-li {
-  list-style: none;
+.leftWidgets {
+    text-align: left;
+    width: 50%;
+    flex: 1;
 }
 
-a {
-  color: white;
-  opacity: 0.75;
-  text-decoration: none;
-}
-
-a:hover {
-  opacity: 1;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.loadingMessage {
+.rightWidgets {
+  text-align: right;
+  width: 50%;
   flex: 1;
-  align-self: center;
-  text-align: center;
-}
-
-.spinner {
-  flex: 1;
-  margin: auto;
-  margin-top: 30%;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  text-align: center;
-
-  -webkit-animation: sk-rotate 2.0s infinite linear;
-  animation: sk-rotate 2.0s infinite linear;
-}
-
-.dot1, .dot2 {
-  width: 60%;
-  height: 60%;
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  background-color: #fff;
-  border-radius: 100%;
-
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
-}
-
-.dot2 {
-  top: auto;
-  bottom: 0;
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
-}
-
-@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
-@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
-
-@-webkit-keyframes sk-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
-}
-
-@keyframes sk-bounce {
-  0%, 100% {
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% {
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-  }
 }
