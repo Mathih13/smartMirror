@@ -30,21 +30,43 @@ body {
     font-weight: 400;
 }
 
+.Widget {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: 400;
+}
+
+
+
 .settingsButton {
     position: fixed;
     z-index: 999;
     left: 0;
     bottom: 0;
+
+}
+
+.settingsButton a {
+  opacity: 0.2;
+}
+
+.settingsButton a:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .leftWidgets {
-    text-align: left;
-    width: 50%;
-    flex: 1;
+  flex: 1
 }
 
 .rightWidgets {
-  text-align: right;
-  width: 50%;
-  flex: 1;
+  margin-left: auto;
+  flex: 1
+
 }

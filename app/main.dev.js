@@ -59,6 +59,7 @@ app.on('ready', async () => {
     await installExtensions();
   }
 
+
   mainWindow = new BrowserWindow({
     //TODO: Fullscreen
     show: false,
