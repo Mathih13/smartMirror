@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 // flow-typed signature: 81bffafeac9b66f8b807d1cc036e380f
 // flow-typed version: 2c04631d20/redux_v3.x.x/flow_>=v0.33.x <=v0.54.x
+=======
+// flow-typed signature: 4731a9b2063393e7eecd72dbd056e2d4
+// flow-typed version: e282e4128f/redux_v3.x.x/flow_>=v0.33.x
+>>>>>>> master
 
 declare module 'redux' {
 
