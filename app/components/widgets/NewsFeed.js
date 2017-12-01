@@ -26,25 +26,41 @@ export default class NewsFeed extends Component {
     Api.get(url)
     .then((json) => {
       this.setState({feed: json.articles})
-      this.getArticle()
+      this.getArticles()
+      this.setState({loading:false})
+
     })
   }
 
   getArticle(){
     var article = this.state.feed.pop();
-    this.setState({title: article.title, desc: article.description})
-    console.log(article.title);
+    this.setState({title: article.title, desc: article.description});
+  }
 
-    console.log(article.description);
-
+  getArticles() {
+    var headlines = []
+    for (var i in this.state.feed) {
+      var entry = {title: this.state.feed[i].title, desc: this.state.feed[i].description.substring(0,99)+"..."}
+      headlines.push(entry)
+    }
+    this.setState({feed: headlines})
   }
 
   render() {
-    return (
+    console.log("feed", this.state.feed)
+    var i = 0
+    const headlines = this.state.feed.map((article) =>
+    <li style={{marginBottom: 7.5, borderBottom: "1px solid white", marginRight: 40}} key={"entry" +i++}> {article.desc} </li>);
+    console.log("headlines", headlines);
+    if (this.state.loading) {
+      return (
+        <p> Loading...</p>
+      )
+    } else {
+      return (
       <div>
-        <p> {this.state.title}</p>
-        <li>{this.state.desc}</li>
-
+        <ul> {headlines}</ul>
       </div>
-  )};
-}
+    )}}
+
+  }
