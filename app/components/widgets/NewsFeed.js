@@ -17,24 +17,22 @@ export default class NewsFeed extends Component {
     this.state = {
       loading: true,
       feed: [],
-      title: "",
-      desc: ""
+      article: null
     }
   }
 
   componentWillMount(){
+
     Api.get(url)
     .then((json) => {
       this.setState({feed: json.articles})
-      this.getArticles()
-      this.setState({loading:false})
-
+      this.prepHeadlines(this.getArticles())
+      this.setState({loading:false});
     })
   }
 
-  getArticle(){
-    var article = this.state.feed.pop();
-    this.setState({title: article.title, desc: article.description});
+  componentDidMount(){
+    this.rotation = setInterval(() => this.rotateFeed(), 5000);
   }
 
   getArticles() {
@@ -43,13 +41,24 @@ export default class NewsFeed extends Component {
       var entry = {title: this.state.feed[i].title, desc: this.state.feed[i].description.substring(0,99)+"..."}
       headlines.push(entry)
     }
+    return headlines
+  }
+
+  prepHeadlines(news){
+    var i = 0
+    const headlines = news.map((article) =>
+    <p className="newsFeed" key={"entry" +i++}> {article.title + "  " + article.desc} </p>);
     this.setState({feed: headlines})
   }
 
+  rotateFeed(){
+    var previous = this.state.article
+    var news = this.state.feed.pop()
+    this.setState({article: news})
+    this.state.feed.unshift(previous)
+  }
+
   render() {
-    var i = 0
-    const headlines = this.state.feed.map((article) =>
-    <li className="newsFeed" key={"entry" +i++}> {article.desc} </li>);
     if (this.state.loading) {
       return (
         <p> Loading...</p>
@@ -57,8 +66,7 @@ export default class NewsFeed extends Component {
     } else {
       return (
       <div>
-        <ul> {headlines}</ul>
+        <ul> {this.state.article}</ul>
       </div>
     )}}
-
   }
