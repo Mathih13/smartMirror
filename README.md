@@ -1,4 +1,7 @@
 # SmartMirror Prosjekt
+Prosjektet ‘SmartMirror’ er en IoT løsning som sikter på å gi tilleggsfunksjonalitet til vanlige speil. Funksjonaliteten og servicene SmartMirror skal inneholde vil i hovedsak være tjenester tilknyttet nyttig informasjon som en bruker skulle være interessert i, som kan være alt fra nyhetsartikler, sitater, vær og temperatur eller annen sensordata.
+
+SmartMirrors fysiske oppbygning er et toveis-speil montert på en skjerm, som igjen er koblet opp mot en raspberry pi med ulike sensorer, installert med den nødvendige programvaren. Nåværende planlagte tillegg sensorer er bevegelsessensor og kamera. Disse skal sørge for ansiktsgjenkjenning via kamera og batteri- og strømsparing gjennom bevegelsessensor.
 
 
 ## License
