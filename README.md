@@ -4,6 +4,27 @@ Prosjektet ‘SmartMirror’ er en IoT løsning som sikter på å gi tilleggsfun
 SmartMirrors fysiske oppbygning er et toveis-speil montert på en skjerm, som igjen er koblet opp mot en raspberry pi med ulike sensorer, installert med den nødvendige programvaren. Nåværende planlagte tillegg sensorer er bevegelsessensor og kamera. Disse skal sørge for ansiktsgjenkjenning via kamera og batteri- og strømsparing gjennom bevegelsessensor.
 
 
+## Installasjon
+
+Dette prosjektet installeres ved å først klone repository.
+
+Deretter installerer man via NPM:
+
+```
+npm install
+```
+
+Og kjører via
+```
+npm start
+```
+
+Alternativ for mer info:
+
+```
+npm run dev
+```
+
 ## License
 MIT
 
