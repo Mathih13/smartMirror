@@ -2,5 +2,5 @@
 
 
 ## License
-MIT © [C. T. Lin](https://github.com/chentsulin)
+MIT © [Info](https://opensource.org/licenses/MIT)
 
